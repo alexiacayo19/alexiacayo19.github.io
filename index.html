@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexia Cayo | Portafolio Oficial</title>
-    <meta name="description" content="Portafolio de Alexia Alisson Cayo Ccasa. Estudiante de Ciencias de la Computación (UCSP) e Ingeniería de Materiales (UNSA).">
+    <title>Alexia Cayo | Ciencias de la Computación</title>
+    <meta name="description" content="Portafolio de Alexia Alisson Cayo Ccasa. Estudiante de Ciencias de la Computación (UCSP).">
     
-    <!-- Fuentes tipográficas elegantes de Google -->
+    <!-- Fuentes tipográficas elegantes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
-        /* Paleta de colores minimalista y elegante */
+        /* Paleta minimalista y editorial */
         :root {
             --bg-color: #ffffff;
             --surface-color: #fbfbfb;
-            --border-color: #e5e5e5;
+            --border-color: #eaeaea;
             --text-primary: #111111;
-            --text-secondary: #666666;
+            --text-secondary: #555555;
             --accent: #000000;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -36,28 +34,20 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: opacity 0.3s ease;
-        }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.6; }
 
-        a:hover {
-            opacity: 0.6;
-        }
-
-        /* Títulos elegantes */
         h1, h2, h3, .brand {
             font-family: 'Playfair Display', serif;
             font-weight: 400;
         }
 
-        /* Barra de Navegación */
+        /* Navegación */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
@@ -72,37 +62,15 @@
             align-items: center;
         }
 
-        .brand {
-            font-size: 1.3rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
+        .brand { font-size: 1.2rem; font-weight: 600; letter-spacing: 0.5px; }
+        .nav-links { display: flex; gap: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .nav-links {
-            display: flex;
-            gap: 35px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 30px; }
 
-        /* Contenedor principal */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
+        section { padding: 100px 0; border-bottom: 1px solid var(--border-color); }
+        section:last-child { border-bottom: none; }
 
-        section {
-            padding: 120px 0 100px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        /* Sección Hero (Inicio) */
+        /* Inicio */
         #inicio {
             display: flex;
             flex-direction: column;
@@ -110,118 +78,112 @@
             text-align: center;
             min-height: 80vh;
             justify-content: center;
-            padding-top: 150px;
+            padding-top: 120px;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 35px;
         }
 
-        .title {
-            font-size: 3.5rem;
-            margin: 0 0 20px 0;
-            line-height: 1.1;
-        }
-
+        .title { font-size: 3.2rem; margin: 0 0 15px 0; line-height: 1.1; }
         .subtitle {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            margin: 0 auto 40px auto;
+            margin: 0 auto 35px auto;
             max-width: 600px;
             font-weight: 300;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--bg-color);
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #333333;
-            transform: translateY(-2px);
-        }
-
         /* Secciones Generales */
         .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 60px;
+            font-size: 2rem;
+            margin-bottom: 50px;
             text-align: center;
         }
 
-        /* Educación */
-        .education-group {
-            margin-bottom: 50px;
-        }
-
-        .education-group h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            border-left: 3px solid var(--accent);
-            padding-left: 15px;
-        }
-
-        .about-grid {
+        /* Grid Académico y Habilidades */
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .card {
             background-color: var(--surface-color);
             padding: 35px;
-            border-radius: 0; /* Bordes rectos más elegantes */
             border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            transform: translateY(-5px);
         }
 
         .card h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
             font-weight: 500;
-            margin: 0 0 10px 0;
-            color: var(--text-primary);
         }
 
-        .card p.institution {
+        .institution {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             color: var(--text-secondary);
             margin: 0 0 15px 0;
+            font-size: 0.95rem;
         }
 
-        .card p.desc {
-            margin: 0;
+        .desc {
             color: var(--text-secondary);
             font-size: 0.9rem;
             font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        /* Etiquetas de Cursos */
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .course-tag {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        /* Barras de Habilidades */
+        .skill-item { margin-bottom: 20px; }
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .skill-bar-bg {
+            background-color: var(--border-color);
+            height: 4px;
+            width: 100%;
+        }
+        .skill-bar-fill {
+            background-color: var(--accent);
+            height: 100%;
         }
 
         /* Proyectos de GitHub */
-        .project-card h4 {
-            margin-bottom: 15px;
-        }
-        
+        .project-card h4 { margin-bottom: 10px; }
         .project-link {
             display: inline-block;
-            margin-top: 20px;
-            font-size: 0.85rem;
+            margin-top: 15px;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 500;
@@ -230,46 +192,34 @@
         }
 
         /* Contacto */
-        #contacto {
-            text-align: center;
-        }
-
+        #contacto { text-align: center; }
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
-
         .social-link {
-            color: var(--text-primary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background-color: var(--accent);
-            color: var(--bg-color);
-            border-color: var(--accent);
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 30px 0;
             color: var(--text-secondary);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .title { font-size: 2.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .title { font-size: 2.2rem; }
             .nav-links { display: none; }
-            section { padding: 80px 0; }
         }
     </style>
 </head>
@@ -280,7 +230,7 @@
             <span class="brand">Alexia Cayo.</span>
             <div class="nav-links">
                 <a href="#inicio">Inicio</a>
-                <a href="#educacion">Trayectoria</a>
+                <a href="#perfil">Perfil</a>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#contacto">Contacto</a>
             </div>
@@ -293,72 +243,104 @@
         <section id="inicio">
             <img src="image.png" alt="Alexia Cayo" class="profile-img">
             <h1 class="title">Alexia Alisson Cayo Ccasa</h1>
-            <p class="subtitle">Estudiante de Ciencias de la Computación (UCSP) e Ingeniería de Materiales (UNSA). Fusionando el desarrollo de software con la ciencia aplicada.</p>
-            <a href="#contacto" class="btn">Contactar</a>
+            <p class="subtitle">Desarrolladora de Software enfocada en Ciencias de la Computación, complementando mi perfil analítico con estudios secundarios en Ingeniería de Materiales.</p>
         </section>
 
-        <!-- Trayectoria y Educación -->
-        <section id="educacion">
-            <h2 class="section-title">Trayectoria Académica</h2>
+        <!-- Perfil: Educación y Habilidades -->
+        <section id="perfil">
+            <h2 class="section-title">Perfil Académico & Técnico</h2>
             
-            <div class="education-group">
-                <h3>Educación Superior</h3>
-                <div class="about-grid">
-                    <div class="card">
-                        <h4>Ciencias de la Computación</h4>
-                        <p class="institution">Universidad Católica San Pablo (UCSP)</p>
-                        <p class="desc">Estudios en proceso. Formación enfocada en algoritmos, desarrollo de software y tecnología.</p>
+            <div class="grid-2">
+                <!-- Columna Izquierda: Educación Principal -->
+                <div class="card">
+                    <h4>Ciencias de la Computación</h4>
+                    <p class="institution">Universidad Católica San Pablo (UCSP)</p>
+                    <p class="desc">Formación principal enfocada en la creación de software, algoritmos y resolución de problemas computacionales. Cursos cursados:</p>
+                    <div class="courses-container">
+                        <span class="course-tag">Estructuras Discretas 1</span>
+                        <span class="course-tag">Técnicas Avanzadas de Programación</span>
+                        <span class="course-tag">Programación de Videojuegos</span>
+                        <span class="course-tag">Programación Orientada a Objetos</span>
+                        <span class="course-tag">Fundamentos Matemáticos</span>
+                        <span class="course-tag">Introd. a Ciencias de la Computación</span>
+                        <span class="course-tag">Lógica</span>
+                        <span class="course-tag">Cálculo Diferencial e Integral 1</span>
+                        <span class="course-tag">Metodología del Estudio</span>
+                        <span class="course-tag">Comunicación 1 y 2</span>
+                        <span class="course-tag">Apreciación Literaria</span>
+                        <span class="course-tag">Introducción a la Filosofía</span>
+                        <span class="course-tag">Análisis de la Realidad Nacional</span>
+                        <span class="course-tag">Historia del Occidente</span>
+                        <span class="course-tag">Moral</span>
+                        <span class="course-tag">Introd. a la Vida Universitaria</span>
                     </div>
+                </div>
+
+                <!-- Columna Derecha: Habilidades y Formación Secundaria -->
+                <div>
+                    <div class="card" style="margin-bottom: 20px;">
+                        <h4>Lenguajes de Programación</h4>
+                        <div style="margin-top: 25px;">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Python</span>
+                                    <span>Intermedio / Avanzado</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>C++</span>
+                                    <span>Intermedio</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 60%;"></div></div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>HTML</span>
+                                    <span>Básico</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 30%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <h4>Ingeniería de Materiales</h4>
                         <p class="institution">Universidad Nacional de San Agustín (UNSA)</p>
-                        <p class="desc">Estudios en proceso. Exploración de la estructura y el comportamiento de diversos materiales.</p>
+                        <p class="desc" style="margin-bottom: 0;">Estudios complementarios orientados a la estructura y ciencias aplicadas.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="education-group">
-                <h3>Idiomas y Complementos</h3>
-                <div class="about-grid">
-                    <div class="card">
-                        <h4>Idioma Inglés</h4>
-                        <p class="institution">Instituto Cultural Norteamericano</p>
-                        <p class="desc">Nivel básico (En curso). Estudiando para expandir mis oportunidades profesionales a nivel global.</p>
-                    </div>
+            <!-- Formación Base e Idiomas -->
+            <div class="grid-2">
+                <div class="card">
+                    <h4>Formación Escolar</h4>
+                    <p class="desc" style="margin-bottom: 8px;"><strong>Secundaria:</strong> Colegio Almirante Miguel Grau (Majes, Arequipa)</p>
+                    <p class="desc" style="margin-bottom: 0;"><strong>Primaria:</strong> Colegio Ciencias Aplicadas (Majes, Arequipa)</p>
                 </div>
-            </div>
-
-            <div class="education-group">
-                <h3>Educación Escolar</h3>
-                <div class="about-grid">
-                    <div class="card">
-                        <h4>Educación Secundaria</h4>
-                        <p class="institution">Colegio Almirante Miguel Grau</p>
-                    </div>
-                    <div class="card">
-                        <h4>Educación Primaria</h4>
-                        <p class="institution">Colegio Ciencias Aplicadas (Majes, Arequipa)</p>
-                    </div>
+                <div class="card">
+                    <h4>Idiomas</h4>
+                    <p class="institution" style="margin-bottom: 5px;">Instituto Cultural Norteamericano</p>
+                    <p class="desc" style="margin-bottom: 0;">Inglés - Nivel Básico (En proceso)</p>
                 </div>
             </div>
         </section>
 
-        <!-- Proyectos de GitHub (Se cargan automáticamente) -->
+        <!-- Proyectos -->
         <section id="proyectos">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <div id="github-projects" class="about-grid">
-                <!-- JavaScript insertará los proyectos aquí -->
-                <p style="text-align:center; width: 100%; color: #666;">Cargando proyectos desde GitHub...</p>
+            <h2 class="section-title">Repositorios Destacados</h2>
+            <div id="github-projects" class="grid-2">
+                <p style="text-align:center; grid-column: 1 / -1; color: #999;">Cargando proyectos desde GitHub...</p>
             </div>
         </section>
 
         <!-- Contacto -->
         <section id="contacto">
-            <h2 class="section-title">Conectemos</h2>
-            <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
-                Actualmente abierta a nuevas oportunidades, aprendizaje continuo y colaboraciones interesantes.
-            </p>
-            
+            <h2 class="section-title">Contacto</h2>
             <div class="social-links">
                 <a href="mailto:alexiacayo2007@gmail.com" class="social-link">Email</a>
                 <a href="https://www.linkedin.com/in/alexia-alisson-cayo-ccasa-0098ab3b4/" target="_blank" class="social-link">LinkedIn</a>
@@ -373,32 +355,27 @@
 
     </div>
 
-    <!-- Script para cargar tus repositorios de GitHub automáticamente -->
+    <!-- Script de GitHub -->
     <script>
         async function loadGitHubProjects() {
             try {
-                // Llama a la API pública de GitHub con tu usuario
                 const response = await fetch('https://api.github.com/users/alexiacayo19/repos?sort=updated&per_page=6');
                 const repos = await response.json();
                 const container = document.getElementById('github-projects');
-                container.innerHTML = ''; // Limpiar el mensaje de carga
+                container.innerHTML = ''; 
                 
-                // Si no hay repositorios públicos o hay un error
                 if (!repos || repos.length === 0 || repos.message) {
-                    container.innerHTML = '<p style="text-align:center; width:100%; color:#999;">Aún estructurando mis proyectos en GitHub. ¡Pronto subiré nuevo contenido!</p>';
+                    container.innerHTML = '<p style="text-align:center; grid-column: 1 / -1; color:#999;">Estructurando proyectos en GitHub. ¡Pronto subiré nuevo contenido!</p>';
                     return;
                 }
 
-                // Filtrar y mostrar los proyectos
                 let proyectosMostrados = 0;
                 repos.forEach(repo => {
-                    if (!repo.fork && proyectosMostrados < 4) { // Muestra hasta 4 proyectos originales
+                    if (!repo.fork && proyectosMostrados < 4) {
                         proyectosMostrados++;
                         const card = document.createElement('div');
                         card.className = 'card project-card';
-                        
-                        // Si no tiene descripción en GitHub, poner una por defecto
-                        const description = repo.description ? repo.description : 'Proyecto de desarrollo de software y tecnología.';
+                        const description = repo.description ? repo.description : 'Proyecto de desarrollo enfocado en ciencias de la computación.';
                         
                         card.innerHTML = `
                             <h4>${repo.name}</h4>
@@ -408,17 +385,10 @@
                         container.appendChild(card);
                     }
                 });
-
-                if (proyectosMostrados === 0) {
-                    container.innerHTML = '<p style="text-align:center; width:100%; color:#999;">Mis repositorios públicos estarán disponibles pronto.</p>';
-                }
-
             } catch (error) {
-                document.getElementById('github-projects').innerHTML = '<p style="text-align:center; width:100%; color:#999;">Los proyectos se están actualizando.</p>';
+                document.getElementById('github-projects').innerHTML = '<p style="text-align:center; grid-column: 1 / -1; color:#999;">Actualizando proyectos.</p>';
             }
         }
-
-        // Ejecutar la función cuando la página cargue
         document.addEventListener('DOMContentLoaded', loadGitHubProjects);
     </script>
 </body>
