@@ -3,142 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexia Cayo | Portafolio</title>
+    <meta name="description" content="Portafolio de Alexia Alisson Cayo Ccasa. Estudiante de Ciencias de la Computación (UCSP) e Ingeniería de Materiales (UNSA).">
     
-    <!-- Etiquetas SEO clave para aparecer en Google -->
-    <title>Alexia Alisson Cayo Ccasa | Portafolio y Enlaces Oficiales</title>
-    <meta name="description" content="Página oficial de Alexia Alisson Cayo Ccasa. Estudiante de Ciencias de la Computación (UCSP) e Ingeniería de Materiales (UNSA). Conoce mis proyectos y redes.">
-    <meta name="keywords" content="Alexia Alisson Cayo Ccasa, Ciencias de la Computación, Ingeniería de Materiales, UCSP, UNSA, Arequipa, Desarrolladora">
-    <meta name="author" content="Alexia Alisson Cayo Ccasa">
-    <meta name="robots" content="index, follow">
-
     <style>
+        /* Estilos base minimalistas */
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --primary: #3b82f6;
-            --hover-color: #2563eb;
+            --bg-color: #0a0a0a;
+            --surface-color: #171717;
+            --border-color: #262626;
+            --text-primary: #ededed;
+            --text-secondary: #a1a1aa;
+            --accent: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-primary);
             margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
+            padding: 0;
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 650px;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--text-secondary);
+        }
+
+        /* Barra de Navegación */
+        nav {
+            position: fixed;
+            top: 0;
             width: 100%;
-            text-align: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Sección Hero (Inicio) */
+        #inicio {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 100vh;
+            padding-top: 80px;
+            border-bottom: none;
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin-bottom: 24px;
-            border: 4px solid var(--primary);
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            margin-bottom: 30px;
+            border: 2px solid var(--border-color);
         }
 
-        h1 { 
-            margin: 0 0 8px 0; 
-            font-size: 2.2rem; 
-            letter-spacing: -0.5px;
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
         }
 
-        .bio { 
-            color: var(--text-muted); 
-            margin-bottom: 35px; 
-            font-size: 1.05rem;
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin: 0 0 30px 0;
+            max-width: 600px;
         }
 
-        .highlight {
-            color: var(--primary);
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-color);
+            padding: 12px 24px;
+            border-radius: 6px;
             font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
-        .links-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+            color: var(--bg-color);
         }
 
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            text-decoration: none;
-            padding: 16px 20px;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid #334155;
+        /* Sección Sobre mí */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--accent);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .education-card {
+            background-color: var(--surface-color);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .education-card h3 {
+            margin: 0 0 10px 0;
             font-size: 1.1rem;
         }
 
-        .link-btn:hover {
-            background-color: var(--hover-color);
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-        }
-
-        .icon {
-            margin-right: 10px;
-            font-size: 1.3rem;
-        }
-
-        .footer {
-            margin-top: 50px;
+        .education-card p {
+            margin: 0;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            color: var(--text-muted);
+        }
+
+        /* Proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--surface-color);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #52525b;
+        }
+
+        .project-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            border-bottom: 1px solid var(--accent);
+        }
+
+        /* Contacto & Footer */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .social-link:hover {
+            background-color: var(--surface-color);
+            color: var(--text-primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .title {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none; /* Simplificamos navbar en móvil para mantenerlo minimalista */
+            }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="nav-content">
+            <strong>Alexia Cayo</strong>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Educación</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <!-- Tu foto vinculada directamente -->
-        <img src="image.png" alt="Alexia Alisson Cayo Ccasa" class="profile-img">
         
-        <h1>Alexia Alisson Cayo Ccasa</h1>
-        <p class="bio">
-            Estudiante de <span class="highlight">Ciencias de la Computación</span> (UCSP) e <span class="highlight">Ingeniería de Materiales</span> (UNSA). <br>
-            Complementando mi formación con estudios de inglés en el Instituto Cultural Norteamericano.
-        </p>
+        <!-- Inicio -->
+        <section id="inicio">
+            <img src="image.png" alt="Alexia Cayo" class="profile-img">
+            <h1 class="title">Hola, soy Alexia.</h1>
+            <p class="subtitle">Estudiante apasionada por la tecnología y la ciencia. Desarrolladora en formación combinando conocimientos de Ciencias de la Computación e Ingeniería de Materiales.</p>
+            <a href="#contacto" class="btn">Contáctame</a>
+        </section>
 
-        <div class="links-grid">
-            <a href="https://www.linkedin.com/in/alexia-alisson-cayo-ccasa-0098ab3b4/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <span class="icon">💼</span> LinkedIn
-            </a>
-            
-            <a href="https://github.com/alexiacayo19" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <span class="icon">💻</span> GitHub
-            </a>
-            
-            <a href="https://www.instagram.com/alexia_cayo19/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <span class="icon">📸</span> Instagram
-            </a>
-            
-            <a href="mailto:alexiacayo2007@gmail.com" class="link-btn">
-                <span class="icon">✉️</span> alexiacayo2007@gmail.com
-            </a>
-        </div>
+        <!-- Sobre Mí / Educación -->
+        <section id="sobre-mi">
+            <h2 class="section-title">Formación Académica</h2>
+            <div class="about-grid">
+                <div class="education-card">
+                    <h3>Ciencias de la Computación</h3>
+                    <p>Universidad Católica San Pablo (UCSP)</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">En proceso. Enfocada en desarrollo de software, algoritmos y tecnologías de la información.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Ingeniería de Materiales</h3>
+                    <p>Universidad Nacional de San Agustín (UNSA)</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">En proceso. Explorando la estructura, propiedades y procesamiento de materiales.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Idioma Inglés</h3>
+                    <p>Instituto Cultural Norteamericano</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">Estudios avanzados para complementar mi perfil profesional a nivel internacional.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="footer">
-            &copy; 2026 Alexia Alisson Cayo Ccasa. Todos los derechos reservados.
-        </div>
+        <!-- Proyectos (Espacios preparados para tus futuros trabajos) -->
+        <section id="proyectos">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Proyecto de Desarrollo 1</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Descripción breve de tu primer proyecto de la universidad o personal. Qué tecnologías usaste.</p>
+                    <a href="#" class="project-link">Ver en GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Proyecto de Materiales 2</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Descripción breve de una investigación o proyecto académico relacionado a tu carrera.</p>
+                    <a href="#" class="project-link">Ver detalles →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" style="border-bottom: none;">
+            <h2 class="section-title">Conectemos</h2>
+            <p style="color: var(--text-secondary);">Actualmente abierta a nuevas oportunidades de aprendizaje, proyectos y colaboraciones. Siéntete libre de escribirme.</p>
+            
+            <div class="social-links">
+                <a href="mailto:alexiacayo2007@gmail.com" class="social-link">Email</a>
+                <a href="https://www.linkedin.com/in/alexia-alisson-cayo-ccasa-0098ab3b4/" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/alexiacayo19" target="_blank" class="social-link">GitHub</a>
+                <a href="https://www.instagram.com/alexia_cayo19/" target="_blank" class="social-link">Instagram</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Alexia Cayo. Todos los derechos reservados.</p>
+        </footer>
+
     </div>
-
 </body>
 </html>
